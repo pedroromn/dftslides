@@ -20,12 +20,14 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+	  
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
+				
 				<section>
-					<h1>Density Functional Theory</h1>
+					<h2>Density Functional Theory</h2>
 					<h4>Basic Concepts of Electronic
 						Structure Calculation
 					</h4>
@@ -34,10 +36,35 @@
 						<!-- and <a href="#">CMT</a></small> -->
 					</p>
 				</section>
+				
+				
 				<section>
-					<section>Vertical Slide 1</section>
-					<section>Vertical Slide 2</section>
+					<section data-transition="slide-in fade-out">
+						<p text-align="justify">
+							When \(a \ne 0\),there are two solutions to \(ax^2 + bx + c = 0\)  and they are
+							$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+						</p>
+
+						<p>
+							\(r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt[]{\sum_{i=1}^{n}(x_i - \bar{x})^2 
+							\sum_{i=1}^{n}(y_i - \bar{y})^2}}\)
+						</p>
+					</section>
+					<section data-transition="fade-in slide-out">Vertical Slide 2</section>	
 				</section>
+
+				<section>
+					<h3>The Lorenz Equations</h3>
+
+					\[\begin{aligned}
+					\dot{x} &amp; = \sigma(y-x) \\
+					\dot{y} &amp; = \rho x - y - xz \\
+					\dot{z} &amp; = -\beta z + xy
+					\end{aligned} \]
+				</section>
+
+				
+
 			</div>
 		</div>
 
@@ -56,6 +83,12 @@
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
+				math: {
+					mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js',
+					config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+					//config: 'TeX-MML-AM_CHTML', async: true
+				},
+
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
@@ -64,7 +97,8 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/search/search.js', async: true },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/math/math.js', async: true }
 				]
 			});
 		</script>
